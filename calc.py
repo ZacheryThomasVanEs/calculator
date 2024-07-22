@@ -4,7 +4,7 @@ def calc(x):
     try:
         print(str(eval(x,{"__builtins__":None},{})))
     except:
-        print("Error")
+        print("Error!")
 
 while True:
     times = input("Input: ")
