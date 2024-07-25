@@ -23,8 +23,13 @@ def equal():
     except:
         tkinter.messagebox.showinfo("Error", "Syntax Error")
 
+#Clear input
 def clear():
     entry.delete(0, tk.END)
+
+#Remove last input
+def undo():
+    entry.delete(len(entry.get())-1,tk.END)
 
 #Create Number Buttons
 button_1 = tk.Button(master=frame, text='1', padx=15, pady=5, width=3, command=lambda: myclick(1))
@@ -59,8 +64,10 @@ button_div = tk.Button(master=frame, text='/', padx=15, pady=5, width=3, command
 button_div.grid(row=6, column=0, pady=2)
 
 #Create function buttons
-button_clear = tk.Button(master=frame, text='clear', padx=15, pady=5, width=12, command=clear)
-button_clear.grid(row=6, column=1, columnspan=2, pady=2)
+button_clear = tk.Button(master=frame, text='clear', padx=15, pady=5, width=3, command=clear)
+button_clear.grid(row=6, column=1, pady=2)
+button_undo = tk.Button(master=frame, text='undo', padx=15, pady=5, width=3, command=undo)
+button_undo.grid(row=6, column=2, pady=2)
 button_equal = tk.Button(master=frame, text='=', padx=15, pady=5, width=5, command=equal)
 button_equal.grid(row=7, column=1, pady=2)
 
